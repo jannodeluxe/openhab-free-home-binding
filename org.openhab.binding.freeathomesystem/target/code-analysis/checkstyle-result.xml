@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.30">
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/pom.xml">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/.classpath">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/README.md">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/resources/OH-INF/binding/binding.xml">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/resources/OH-INF/thing/bridge-type.xml">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/resources/OH-INF/thing/thing-types.xml">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/resources/OH-INF/i18n/freeathomesystem_xx_XX.properties">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/.DS_Store">
+<error line="1" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/FreeAtHomeThermostatHandler.java">
+<error line="44" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="70" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="152" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="207" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="222" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="237" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/FreeAtHomeSystemBaseHandler.java">
+<error line="29" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="37" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+<error line="42" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/FreeAtHomeDeviceDescription.java">
+<error line="31" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="215" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="260" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="277" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="281" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="285" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="291" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="295" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="299" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/EventSocket.java">
+<error line="33" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/FreeAtHomeBridgeHandler.java">
+<error line="27" severity="warning" message="The package org.apache.commons.net.util.Base64 should not be used." source="org.openhab.tools.analysis.checkstyle.ForbiddenPackageUsageCheck"/>
+<error line="101" column="23" severity="info" message="Name &apos;BRIDGE_WEBSOCKET_RECONNECT_DELAY&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.MemberNameCheck"/>
+<error line="109" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="114" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="122" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="147" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="161" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="166" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="175" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="219" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="270" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="298" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="405" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+<error line="438" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="458" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="478" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/ChannelUpdateHandler.java">
+<error line="32" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="56" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="66" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="74" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="81" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="89" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/FreeAtHomeDeviceList.java">
+<error line="40" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="66" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="115" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="139" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+<error line="143" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+<error line="147" severity="info" message="Comment matches to-do format &apos;(TODO)|(FIXME)&apos;." source="com.puppycrawl.tools.checkstyle.checks.TodoCommentCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/handler/FreeAtHomeSwitchHandler.java">
+<error line="41" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="108" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/FreeAtHomeSystemHandlerFactory.java">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/Configuration/FreeAtHomeBridgeHandlerConfiguration.java">
+<error line="14" column="9" severity="info" message="Name &apos;org.openhab.binding.freeathomesystem.internal.Configuration&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="22" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/.DS_Store">
+<error line="1" severity="info" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/FreeAtHomeSystemDiscoveryService.java">
+<error line="30" severity="warning" message="First javadoc author should have &quot;Initial contribution&quot; contribution description." source="org.openhab.tools.analysis.checkstyle.AuthorContributionDescriptionCheck"/>
+<error line="34" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="55" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="72" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="74" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+<error line="90" severity="info" message="Remove empty line before closing brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/org/openhab/binding/freeathomesystem/internal/FreeAtHomeSystemBindingConstants.java">
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/ValueStateConverters/DecimalValueStateConverter.java">
+<error line="13" column="9" severity="info" message="Name &apos;ValueStateConverters&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="25" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/ValueStateConverters/BooleanValueStateConverter.java">
+<error line="14" column="9" severity="info" message="Name &apos;ValueStateConverters&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="26" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="30" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/ValueStateConverters/BinaryValueStateConverter.java">
+<error line="14" column="9" severity="info" message="Name &apos;ValueStateConverters&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="26" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+<error line="36" severity="info" message="Remove empty line after opening brace" source="org.openhab.tools.analysis.checkstyle.NoEmptyLineSeparatorCheck"/>
+</file>
+<file name="/Users/andras/Development/openhab-main/git/openhab-addons/bundles/org.openhab.binding.freeathomesystem/src/main/java/ValueStateConverters/ValueStateConverter.java">
+<error line="14" column="9" severity="info" message="Name &apos;ValueStateConverters&apos; must match pattern &apos;^[a-z]+(\.[a-z][a-z0-9]*)*$&apos;." source="com.puppycrawl.tools.checkstyle.checks.naming.PackageNameCheck"/>
+<error line="25" severity="warning" message="Classes/Interfaces should be annotated with @NonNullByDefault" source="org.openhab.tools.analysis.checkstyle.NullAnnotationsCheck"/>
+</file>
+</checkstyle>
