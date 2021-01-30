@@ -1,4 +1,4 @@
-# FreeAtHomeSystem Binding
+# FreeAtHomeSystem Binding - DRAFT file - content unreviewed
 
 _Give some details about what this binding is meant for - a protocol, system, specific device._
 
