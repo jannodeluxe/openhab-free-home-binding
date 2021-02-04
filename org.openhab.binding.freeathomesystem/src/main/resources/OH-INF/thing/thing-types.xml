@@ -20,6 +20,58 @@
 		</channels>
 	</thing-type>
 
+	<!--Sensor Actuator 2/2 Thing Type -->
+	<thing-type id="switch_2_2">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="bridge"/>
+		</supported-bridge-type-refs>
+		<label>Sensor/Actuator</label>
+		<description>Sensor/Actuator for Free@Home Binding</description>
+
+		<channels>
+			<channel id="switch_channel_1" typeId="switch_channel_type">
+				<label>Sensor Actuator Channel 1</label>
+				<description>Sensor Actuator (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+			<channel id="switch_channel_2" typeId="switch_channel_type">
+				<label>Sensor Actuator Channel 2</label>
+				<description>Sensor Actuator (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+			<channel id="sensor_channel_1" typeId="sensor_channel_type">
+				<label>Sensor Channel</label>
+				<description>Sensor (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+			<channel id="sensor_channel_2" typeId="sensor_channel_type">
+				<label>Sensor Channel</label>
+				<description>Sensor (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+		</channels>
+	</thing-type>
+
+	<!--Sensor Actuator 2/2 Thing Type -->
+	<thing-type id="switch_2_1">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="bridge"/>
+		</supported-bridge-type-refs>
+		<label>Sensor/Actuator</label>
+		<description>Sensor/Actuator for Free@Home Binding</description>
+
+		<channels>
+			<channel id="switch_channel_1" typeId="switch_channel_type">
+				<label>Sensor Actuator Channel 1</label>
+				<description>Sensor Actuator (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+			<channel id="sensor_channel_1" typeId="sensor_channel_type">
+				<label>Sensor Channel</label>
+				<description>Sensor (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+			<channel id="sensor_channel_2" typeId="sensor_channel_type">
+				<label>Sensor Channel</label>
+				<description>Sensor (ON/OFF) Channel for Free@Home Binding</description>
+			</channel>
+		</channels>
+	</thing-type>
+
 	<!--Sensor Actuator Channel Type -->
 	<channel-type id="switch_channel_type">
 		<item-type>Switch</item-type>
@@ -27,7 +79,6 @@
 		<description>Free@Home Sensor Actuator Channel</description>
 		<category>Switch</category>
 	</channel-type>
-
 
 	<!--Sensor Thing Type -->
 	<thing-type id="sensor">
@@ -131,6 +182,40 @@
 		<state readOnly="true"></state>
 	</channel-type>
 
+	<!--Window Sensor Thing Type -->
+	<thing-type id="windowsensor">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="bridge"/>
+		</supported-bridge-type-refs>
+		<label>Window Sensor</label>
+		<description>Window Sensor for Free@Home Binding</description>
+		<channels>
+			<channel id="window_state_channel" typeId="window_state_channel_type">
+				<label>Window State Channel</label>
+				<description>Window State / 1 - Open, 0 - Closed</description>
+			</channel>
+			<channel id="window_pos_channel" typeId="window_pos_channel_type">
+				<label>Window Position Channel</label>
+				<description>Position of Window</description>
+			</channel>
+		</channels>
+	</thing-type>
+
+	<!--Sensor Channel Type -->
+	<channel-type id="window_state_channel_type">
+		<item-type>Number</item-type>
+		<label>Window State Channel</label>
+		<description>Free@Home Sensor Input Channel</description>
+		<category>Number</category>
+		<state readOnly="true"></state>
+	</channel-type>
+	<channel-type id="window_pos_channel_type">
+		<item-type>Number</item-type>
+		<label>Window Position Channel</label>
+		<description>Free@Home Sensor Input Channel</description>
+		<category>Number</category>
+		<state readOnly="true"></state>
+	</channel-type>
 
 
 </thing:thing-descriptions>

@@ -496,7 +496,9 @@ public class FreeAtHomeBridgeHandler extends BaseBridgeHandler {
     }
 
     public FreeAtHomeDeviceList getDeviceDeviceList() {
-        FreeAtHomeDeviceList deviceList = new FreeAtHomeDeviceList(httpClient, ipAddress, sysApUID);
+        FreeAtHomeSysApDeviceList deviceList = new FreeAtHomeSysApDeviceList(httpClient, ipAddress, sysApUID);
+        // FreeAtHomeTestDeviceList deviceList = new FreeAtHomeTestDeviceList("devicelist.json", "getconfig.json",
+        // sysApUID);
 
         deviceList.buildComponentList();
 

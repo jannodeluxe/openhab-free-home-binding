@@ -77,8 +77,43 @@ public class FreeAtHomeSystemDiscoveryService extends AbstractDiscoveryService {
                                     device.deviceId);
                             Map<String, Object> properties = new HashMap<>(1);
                             properties.put("deviceId", device.deviceId);
+                            properties.put("interface", device.interfaceType);
                             properties.put("numberOfSensorChannels", "1");
                             properties.put("numberOfActutorChannels", "1");
+
+                            DiscoveryResult discoveryResult = DiscoveryResultBuilder.create(uid)
+                                    .withLabel(device.deviceType + " - " + device.deviceLabel + " - " + device.deviceId)
+                                    .withBridge(bridgeUID).withProperties(properties).build();
+
+                            thingDiscovered(discoveryResult);
+                            break;
+                        }
+
+                        case FreeAtHomeSystemBindingConstants.SWITCH_2_1_TYPE_ID: {
+                            ThingUID uid = new ThingUID(FreeAtHomeSystemBindingConstants.SWITCH_2_1_TYPE_UID, bridgeUID,
+                                    device.deviceId);
+                            Map<String, Object> properties = new HashMap<>(1);
+                            properties.put("deviceId", device.deviceId);
+                            properties.put("interface", device.interfaceType);
+                            properties.put("numberOfSensorChannels", "2");
+                            properties.put("numberOfActutorChannels", "1");
+
+                            DiscoveryResult discoveryResult = DiscoveryResultBuilder.create(uid)
+                                    .withLabel(device.deviceType + " - " + device.deviceLabel + " - " + device.deviceId)
+                                    .withBridge(bridgeUID).withProperties(properties).build();
+
+                            thingDiscovered(discoveryResult);
+                            break;
+                        }
+
+                        case FreeAtHomeSystemBindingConstants.SWITCH_2_2_TYPE_ID: {
+                            ThingUID uid = new ThingUID(FreeAtHomeSystemBindingConstants.SWITCH_2_2_TYPE_UID, bridgeUID,
+                                    device.deviceId);
+                            Map<String, Object> properties = new HashMap<>(1);
+                            properties.put("deviceId", device.deviceId);
+                            properties.put("interface", device.interfaceType);
+                            properties.put("numberOfSensorChannels", "2");
+                            properties.put("numberOfActutorChannels", "2");
 
                             DiscoveryResult discoveryResult = DiscoveryResultBuilder.create(uid)
                                     .withLabel(device.deviceType + " - " + device.deviceLabel + " - " + device.deviceId)
@@ -93,13 +128,29 @@ public class FreeAtHomeSystemDiscoveryService extends AbstractDiscoveryService {
                                     device.deviceId);
                             Map<String, Object> properties = new HashMap<>(1);
                             properties.put("deviceId", device.deviceId);
+                            properties.put("interface", device.interfaceType);
                             properties.put("numberOfSensorChannels", "1");
                             properties.put("numberOfActutorChannels", "1");
 
                             DiscoveryResult discoveryResult = DiscoveryResultBuilder.create(uid)
                                     .withLabel(device.deviceType + " - " + device.deviceLabel + " - " + device.deviceId)
                                     .withBridge(bridgeUID).withProperties(properties).build();
+
                             thingDiscovered(discoveryResult);
+                            break;
+                        }
+
+                        case FreeAtHomeSystemBindingConstants.WINDOWSENSOR_TYPE_ID: {
+                            ThingUID uid = new ThingUID(FreeAtHomeSystemBindingConstants.WINDOWSENSOR_TYPE_UID,
+                                    bridgeUID, device.deviceId);
+                            Map<String, Object> properties = new HashMap<>(1);
+                            properties.put("deviceId", device.deviceId);
+                            properties.put("interface", device.interfaceType);
+                            properties.put("numberOfSensorChannels", "2");
+
+                            DiscoveryResult discoveryResult = DiscoveryResultBuilder.create(uid)
+                                    .withLabel(device.deviceType + " - " + device.deviceLabel + " - " + device.deviceId)
+                                    .withBridge(bridgeUID).withProperties(properties).build();
 
                             thingDiscovered(discoveryResult);
                             break;

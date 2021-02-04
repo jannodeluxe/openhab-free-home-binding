@@ -18,6 +18,7 @@ import java.util.Set;
 
 import org.openhab.binding.freeathomesystem.internal.FreeAtHomeSystemBindingConstants;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 /**
@@ -50,7 +51,7 @@ public class FreeAtHomeDeviceDescription {
     // public static final int FID_WIND_ALARM_SENSOR = 0x000C; // Wind Alarm
     // public static final int FID_FROST_ALARM_SENSOR = 0x000D; // Frost Alarm
     // public static final int FID_RAIN_ALARM_SENSOR = 0x000E; // Rain Alarm
-    // public static final int FID_WINDOW_DOOR_SENSOR = 0x000F; // Window sensor
+    public static final int FID_WINDOW_DOOR_SENSOR = 0x000F; // Window sensor
     // public static final int FID_MOVEMENT_DETECTOR = 0x0011; // Movement Detector
     // public static final int FID_DIMMING_ACTUATOR = 0x0012; // Dim actuator
     // public static final int FID_RADIATOR_ACTUATOR = 0x0014; // Radiator
@@ -121,7 +122,7 @@ public class FreeAtHomeDeviceDescription {
     // public static final int FID_BLIND_ACTUATOR = 0x0061;// Roller blind actuator
     // public static final int FID_ATTIC_WINDOW_ACTUATOR = 0x0062;// Attic window actuator
     // public static final int FID_AWNING_ACTUATOR = 0x0063;// Awning actuator
-    // public static final int FID_WINDOW_DOOR_POSITION_SENSOR = 0x0064;// WindowDoor Position Sensor
+    public static final int FID_WINDOW_DOOR_POSITION_SENSOR = 0x0064; // WindowDoor Position Sensor
     // public static final int FID_WINDOW_DOOR_POSITION_ACTUATOR = 0x0065;// Window/Door position
     // public static final int FID_MEDIA_PLAYBACK_CONTROL_SENSOR = 0x0066;// Media playback control sensor
     // public static final int FID_MEDIA_VOLUME_SENSOR = 0x0067;// Media volume sensor
@@ -202,13 +203,21 @@ public class FreeAtHomeDeviceDescription {
     public static final String DEVICE_TYPE_SENSORACTUATOR_11 = "Sensor/Actuator 1/1";
     public static final String DEVICE_TYPE_SENSORACTUATOR_1 = "Sensor 1/0";
     public static final String DEVICE_TYPE_SENSORACTUATOR_21 = "Sensor/Actuator 2/1";
-    public static final String DEVICE_TYPE_SENSORACTUATOR_22 = "Sensor/Actuator 1/1";
+    public static final String DEVICE_TYPE_SENSORACTUATOR_22 = "Sensor/Actuator 2/2";
     public static final String DEVICE_TYPE_THERMOSTAT = "Thermostat";
+
+    public static final String DEVICE_INTERFACE_WIRELESS_TYPE = "wireless";
+    public static final String DEVICE_INTERFACE_VIRTUAL_TYPE = "virtual";
+    public static final String DEVICE_INTERFACE_WIRED_TYPE = "wired";
+    public static final String DEVICE_INTERFACE_HUE_TYPE = "hue";
+
+    public static final String DEVICE_TYPE_WINDOWSENSOR = "Window Sensor";
 
     public String thingsTypeOfDevice;
     public String deviceType;
     public String deviceLabel;
     public String deviceId;
+    public String interfaceType;
     public boolean validDevice;
 
     public FreeAtHomeDeviceDescription(JsonObject jsonObject, String id) {
@@ -218,15 +227,30 @@ public class FreeAtHomeDeviceDescription {
         int numberOfSensorChannels = 0;
         int numberOfActuatorChannels = 0;
         int numberOfTemperatureChannels = 0;
+        int numberOfWindowSensors = 0;
 
         thingsTypeOfDevice = new String();
         deviceType = new String();
         deviceLabel = new String();
+        interfaceType = new String();
         deviceId = id;
         validDevice = false;
 
         jsonObject = jsonObject.getAsJsonObject(id);
         JsonObject jsonObjectOfChannels = jsonObject.getAsJsonObject("channels");
+
+        JsonElement jsonObjectOfInterface = jsonObject.get("interface");
+        String interfaceString = jsonObjectOfInterface.getAsString();
+
+        if (interfaceString.toLowerCase().startsWith("vdev:")) {
+            interfaceType = DEVICE_INTERFACE_VIRTUAL_TYPE;
+        } else if (interfaceString.toLowerCase().startsWith("hue")) {
+            interfaceType = DEVICE_INTERFACE_HUE_TYPE;
+        } else if (interfaceString.toLowerCase().startsWith("rf")) {
+            interfaceType = DEVICE_INTERFACE_WIRELESS_TYPE;
+        } else {
+            interfaceType = DEVICE_INTERFACE_WIRED_TYPE;
+        }
 
         if (null != jsonObjectOfChannels) {
             Set<String> keys = jsonObjectOfChannels.keySet();
@@ -239,37 +263,44 @@ public class FreeAtHomeDeviceDescription {
 
                 JsonObject channelObject = jsonObjectOfChannels.getAsJsonObject(nextChannel);
 
+                if (false == deviceLabelSet) {
+                    this.deviceLabel = channelObject.get("displayName").getAsString() + " - " + interfaceType;
+                    deviceLabelSet = true;
+                }
+
                 String channelFunctionID = channelObject.get("functionID").getAsString();
 
                 if (false == channelFunctionID.isEmpty()) {
                     switch (getIntegerFromHex(channelFunctionID)) {
-                        case FID_SWITCH_SENSOR: {
-                            // increment sensor channels
+                        // increment sensor channels
+                        case FID_SWITCH_SENSOR:
+                        case FID_SCENE_SENSOR:
+                        case FID_DIMMING_SENSOR: {
                             numberOfSensorChannels++;
                             break;
                         }
+                        // increment actuator channels
                         case FID_SWITCH_ACTUATOR: {
-                            // increment actuator channels
                             numberOfActuatorChannels++;
                             break;
                         }
+                        // increment thermostat channels
                         case FID_RADIATOR_ACTUATOR_MASTER: {
-                            // increment thermostat channels
                             numberOfTemperatureChannels++;
                             break;
-
+                        }
+                        // increment window sensor channels
+                        case FID_WINDOW_DOOR_SENSOR:
+                        case FID_WINDOW_DOOR_POSITION_SENSOR: {
+                            numberOfWindowSensors++;
+                            break;
                         }
                     }
                 }
-
-                if (false == deviceLabelSet) {
-                    this.deviceLabel = channelObject.get("displayName").getAsString();
-                    deviceLabelSet = true;
-                }
             }
 
-            if (numberOfSensorChannels > 1) {
-                numberOfSensorChannels--; // because the "Nebenstelle"
+            if ((numberOfSensorChannels > 1) && interfaceType.equalsIgnoreCase(DEVICE_INTERFACE_WIRELESS_TYPE)) {
+                numberOfSensorChannels = numberOfSensorChannels / 2; // because the "Nebenstelle"
             }
 
             // Determine device type based on the channels
@@ -283,20 +314,28 @@ public class FreeAtHomeDeviceDescription {
                     // Sensor Actuator 2/0
                     // deviceType = FreeAtHomeSystemBindingConstants.SENSOR_TYPE_ID;
 
-                } else if ((1 == numberOfActuatorChannels) && (1 == numberOfActuatorChannels)) {
+                } else if ((1 == numberOfActuatorChannels) && (1 == numberOfSensorChannels)) {
                     // Sensor Actuator 1/1
                     thingsTypeOfDevice = FreeAtHomeSystemBindingConstants.SWITCH_TYPE_ID;
                     deviceType = DEVICE_TYPE_SENSORACTUATOR_11;
                     validDevice = true;
 
-                } else if ((2 == numberOfActuatorChannels) && (1 == numberOfActuatorChannels)) {
+                } else if ((2 == numberOfActuatorChannels) && (1 == numberOfSensorChannels)) {
                     // Sensor Actuator 2/1
-                    // deviceType = FreeAtHomeSystemBindingConstants.SWITCH_TYPE_ID;
+                    thingsTypeOfDevice = FreeAtHomeSystemBindingConstants.SWITCH_2_1_TYPE_ID;
+                    deviceType = DEVICE_TYPE_SENSORACTUATOR_21;
+                    validDevice = true;
 
-                } else if ((2 == numberOfActuatorChannels) && (2 == numberOfActuatorChannels)) {
+                } else if ((2 == numberOfActuatorChannels) && (2 == numberOfSensorChannels)) {
                     // Sensor Actuator 2/2
-                    // deviceType = FreeAtHomeSystemBindingConstants.SWITCH_TYPE_ID;
+                    thingsTypeOfDevice = FreeAtHomeSystemBindingConstants.SWITCH_2_2_TYPE_ID;
+                    deviceType = DEVICE_TYPE_SENSORACTUATOR_22;
+                    validDevice = true;
 
+                } else if ((1 == numberOfWindowSensors) || (2 == numberOfWindowSensors)) {
+                    thingsTypeOfDevice = FreeAtHomeSystemBindingConstants.WINDOWSENSOR_TYPE_ID;
+                    deviceType = DEVICE_TYPE_WINDOWSENSOR;
+                    validDevice = true;
                 } else {
                     deviceType = "";
                 }

@@ -38,7 +38,7 @@ import ValueStateConverters.BooleanValueStateConverter;
  *
  */
 
-public class FreeAtHomeSwitchHandler extends FreeAtHomeSystemBaseHandler {
+public class FreeAtHomeSwitchHandler_21 extends FreeAtHomeSystemBaseHandler {
 
     private String deviceID;
     private String deviceChannel;
@@ -47,9 +47,9 @@ public class FreeAtHomeSwitchHandler extends FreeAtHomeSystemBaseHandler {
 
     private FreeAtHomeBridgeHandler freeAtHomeBridge = null;
 
-    private final Logger logger = LoggerFactory.getLogger(FreeAtHomeSwitchHandler.class);
+    private final Logger logger = LoggerFactory.getLogger(FreeAtHomeSwitchHandler_21.class);
 
-    public FreeAtHomeSwitchHandler(Thing thing) {
+    public FreeAtHomeSwitchHandler_21(Thing thing) {
         super(thing);
     }
 

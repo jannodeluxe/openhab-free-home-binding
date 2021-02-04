@@ -31,16 +31,30 @@ public class FreeAtHomeSystemBindingConstants {
     // List of all Thing Type UIDs
     public static final String BRIDGE_TYPE_ID = "bridge";
     public static final String SWITCH_TYPE_ID = "switch";
+    public static final String SWITCH_2_1_TYPE_ID = "switch_2_1";
+    public static final String SWITCH_2_2_TYPE_ID = "switch_2_2";
+
     public static final String SENSOR_TYPE_ID = "sensor";
     public static final String THERMOSTAT_TYPE_ID = "thermostat";
+    public static final String WINDOWSENSOR_TYPE_ID = "windowsensor";
 
     // List of all Thing Type UIDs
     public static final ThingTypeUID BRIDGE_TYPE_UID = new ThingTypeUID(BINDING_ID, BRIDGE_TYPE_ID);
     public static final ThingTypeUID SWITCH_TYPE_UID = new ThingTypeUID(BINDING_ID, SWITCH_TYPE_ID);
+    public static final ThingTypeUID SWITCH_2_1_TYPE_UID = new ThingTypeUID(BINDING_ID, SWITCH_2_1_TYPE_ID);
+    public static final ThingTypeUID SWITCH_2_2_TYPE_UID = new ThingTypeUID(BINDING_ID, SWITCH_2_2_TYPE_ID);
     public static final ThingTypeUID THERMOSTAT_TYPE_UID = new ThingTypeUID(BINDING_ID, THERMOSTAT_TYPE_ID);
+    public static final ThingTypeUID WINDOWSENSOR_TYPE_UID = new ThingTypeUID(BINDING_ID, WINDOWSENSOR_TYPE_ID);
 
-    // List of all Channel ids
+    // sensor Channel ids
+    public static final String SENSOR_1_CHANNEL_ID = "sensor_channel_1";
+    public static final String SENSOR_2_CHANNEL_ID = "sensor_channel_2";
+
+    // switch Channel ids
     public static final String SWITCH_CHANNEL_ID = "switch_channel";
+    // multiple switch/sensor Channel ids
+    public static final String SWITCH_CHANNEL_1_ID = "switch_channel_1";
+    public static final String SWITCH_CHANNEL_2_ID = "switch_channel_2";
 
     // Thermostat Channel ids
     public static final String THERMOSTAT_CHANNEL_SETPOINTTEMP_ID = "thermostat_setpoint_temperature";
@@ -51,6 +65,10 @@ public class FreeAtHomeSystemBindingConstants {
     public static final String THERMOSTAT_CHANNEL_ONOFFWITCH_ID = "thermostat_onoff_switch";
     public static final String THERMOSTAT_CHANNEL_ECOSWITCH_ID = "thermostat_eco_switch";
 
-    public static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Set.of(SWITCH_TYPE_UID, BRIDGE_TYPE_UID,
-            THERMOSTAT_TYPE_UID);
+    // window sensor Channel ids
+    public static final String WINDOWSENSOR_CHANNEL_STATE_ID = "window_state_channel";
+    public static final String WINDOWSENSOR_CHANNEL_POS_ID = "window_pos_channel";
+
+    public static final Set<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Set.of(SWITCH_TYPE_UID, SWITCH_2_2_TYPE_UID,
+            BRIDGE_TYPE_UID, WINDOWSENSOR_TYPE_UID, THERMOSTAT_TYPE_UID);
 }
